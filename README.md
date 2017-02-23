@@ -7,8 +7,10 @@ This is an elm package to track the size of an HTML element when it resizes. It 
 * top
 * left
 
-You can track changes to the size of an HTML element by using a subscription as shown in the example below. You can also just get a single 
+You can track changes to the size of an HTML element by using a subscription as shown in the example below. You can also just get a single
 measurement using a Task as is shown by getInitialSize.
+
+You can pass any valid css selector as a string to track.
 
 #Examples
 
