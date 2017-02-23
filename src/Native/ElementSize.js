@@ -1,4 +1,4 @@
-var _kingsleyh$boardy$Native_DomElement = function () {
+var _kingsleyh$element_size$Native_ElementSize = function () {
 
     // based on http://www.backalleycoder.com/2013/03/18/cross-browser-event-based-element-resize-detection/
     (function () {
