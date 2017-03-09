@@ -154,13 +154,25 @@ var _kingsleyh$element_size$Native_ElementSize = function () {
 
     function size(selector) {
         return _elm_lang$core$Native_Scheduler.nativeBinding(function (callback) {
-            callback(_elm_lang$core$Native_Scheduler.succeed({
-                selector: selector,
-                width: document.querySelector(selector) != null ? document.querySelector(selector).offsetWidth : 0,
-                height: document.querySelector(selector) != null ? document.querySelector(selector).offsetHeight : 0,
-                top: document.querySelector(selector) != null ? document.querySelector(selector).offsetTop : 0,
-                left: document.querySelector(selector) != null ? document.querySelector(selector).offsetLeft : 0
-            }));
+                var n = document.querySelector(selector);
+                var s = {
+                    selector: selector,
+                    width: 0,
+                    height: 0,
+                    top: 0,
+                    left: 0
+                };
+                if (n) {
+                    s = {
+                        selector: selector,
+                        width: n.offsetWidth,
+                        height: n.offsetHeight,
+                        top: n.offsetTop,
+                        left: n.offsetLeft
+                    };
+                }
+
+                callback(_elm_lang$core$Native_Scheduler.succeed(s));
         });
     }
 
@@ -188,10 +200,9 @@ var _kingsleyh$element_size$Native_ElementSize = function () {
         });
     }
 
-
-    return {
-        onResize: F3(onResize),
-        size: size
-    };
+        return {
+            onResize: F3(onResize),
+            size: size
+        };
 
 }();
